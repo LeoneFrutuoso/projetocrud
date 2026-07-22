@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD de Tarefas</title>
+</head>
+<body>
+
+    <h1>CRUD DE TAREFAS</h1>
+
+    <div id="form">
+        <div class="container-inputs">
+            <label for="input-nome">Nome</label>
+            <input id="input-nome" type="text">
+        </div>
+        <div class="container-inputs">
+            <label for="input-idade">Idade</label>
+            <input id="input-idade" type="number">
+        </div>
+        <div class="container-inputs">
+            <label for="input-disponibilidade">Disponibilidade</label>
+            <input id="input-disponibilidade" type="text">
+        </div>
+        <div class="container-inputs">
+            <label for="input-horario">Horário</label>
+            <input id="input-horario" type="text">
+        </div>
+        <div class="container-inputs">
+            <label for="input-restricoes">Restrições</label>
+            <input id="input-restricoes" type="text">
+        </div>
+        
+        <!-- Adicionado o campo oculto para guardar o ID -->
+        <div class="container-inputs" id="div-id">
+            <label for="input-id">ID</label>
+            <input id="input-id" type="number" readonly>
+        </div>
+
+        <button onclick="cadastrarPessoa()">+</button>
+        <button onclick="salvarPessoa()">💾</button>
+        <button onclick="excluirPessoa()">🗑️</button>
+    </div>
+
+    <div id="painel-botoes">
+        <button onclick="mostrarTodas()">Mostrar todas as pessoas</button>
+        <button onclick="pesquisar()">🔍</button>
+    </div>
+
+    <div id="painel-pessoas"></div>
+
+    <!-- O script DEVE ficar no final do body -->
+    <script src="script.js"></script>
+</body>
+</html>
