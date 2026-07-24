@@ -31,10 +31,17 @@
             <label for="input-restricoes">Restrições</label>
             <input id="input-restricoes" type="text">
         </div>
-        
-
         <input id="input-id" type=>
-        <button onclick="cadastrarPessoa()">+</button>
+
+        <div class="container-inputs">
+    <label for="input-concluido">Já foi concluído?</label>
+    <select id="input-concluido">
+        <option value="false">Não</option>
+        <option value="true">Sim</option>
+    </select>
+</div>
+
+   <button onclick="cadastrarPessoa()">+</button>
         <button onclick="salvarPessoa()">💾</button>
         <button onclick="excluirPessoa()">🗑️</button>
     

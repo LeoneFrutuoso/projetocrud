@@ -18,6 +18,7 @@ function cadastrarPessoa() {
         disponibilidade: document.getElementById("input-disponibilidade").value,
         horario: document.getElementById("input-horario").value,
         restricoes: document.getElementById("input-restricoes").value
+        concluido: document.getElementById("input-concluido").value
     }
     
     pessoas.push(novaPessoa)
@@ -29,6 +30,7 @@ function cadastrarPessoa() {
 
 function limparFormulario() {
     document.getElementById('input-nome').value = ''
+    document.getElementById('input-concluido').value = 'false'
     document.getElementById('input-idade').value = ''
     document.getElementById('input-disponibilidade').value = ''
     document.getElementById('input-horario').value = ''
@@ -42,6 +44,10 @@ function mostrarTodas(){
     document.getElementById('painel-pessoas').innerHTML = '' 
 
     for(let i = 0; i < pessoas.length; i++){ 
+let estilo = ''
+    if(pessoas[i].concluido === 'true'){
+        estilo = 'style="background: #d1fae5; border-left: 4px solid #10b981; text-decoration: line-through;"'
+    }
   console.log (pessoas)
   console.log (i)
 
@@ -52,6 +58,8 @@ function mostrarTodas(){
             <p>Disponibilidade: ${pessoas[i].disponibilidade}</p>
             <p>Horário: ${pessoas[i].horario }</p>
             <p>Restrições: ${pessoas[i].restricoes }</p>
+             <p>Status: ${pessoas[i].concluido === 'true' ? '✅ Concluído' : '⏳ Pendente'}</p>
+        
             <P> ${pessoas[i].id}</p>
         </div>` 
     }
@@ -66,6 +74,7 @@ function pesquisar(){
             document.getElementById('input-disponibilidade').value = pessoas[i].disponibilidade
             document.getElementById('input-horario').value = pessoas[i].horario || ''
             document.getElementById('input-restricoes').value = pessoas[i].restricoes
+            document.getElementById('input-concluido').value = pessoas[i].concluido
             document.getElementById('input-id').value = pessoas[i].id
             break
         }
@@ -90,6 +99,7 @@ function salvarPessoa(){
             pessoas[i].disponibilidade = document.getElementById('input-disponibilidade').value 
             pessoas[i].horario = document.getElementById('input-horario').value 
             pessoas[i].restricoes = document.getElementById('input-restricoes').value 
+            pessoas[i].concluido = document.getElementById('input-concluido').value
             break 
     }
     }
