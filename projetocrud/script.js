@@ -18,7 +18,6 @@ function cadastrarPessoa() {
         disponibilidade: document.getElementById("input-disponibilidade").value,
         horario: document.getElementById("input-horario").value,
         restricoes: document.getElementById("input-restricoes").value
-        concluido: document.getElementById("input-concluido").value
     }
     
     pessoas.push(novaPessoa)
@@ -30,7 +29,6 @@ function cadastrarPessoa() {
 
 function limparFormulario() {
     document.getElementById('input-nome').value = ''
-    document.getElementById('input-concluido').value = 'false'
     document.getElementById('input-idade').value = ''
     document.getElementById('input-disponibilidade').value = ''
     document.getElementById('input-horario').value = ''
@@ -44,45 +42,42 @@ function mostrarTodas(){
     document.getElementById('painel-pessoas').innerHTML = '' 
 
     for(let i = 0; i < pessoas.length; i++){ 
-let estilo = ''
-    if(pessoas[i].concluido === 'true'){
-        estilo = 'style="background: #d1fae5; border-left: 4px solid #10b981; text-decoration: line-through;"'
-    }
-  console.log (pessoas)
-  console.log (i)
-
         document.getElementById('painel-pessoas').innerHTML += 
         `<div class="card-pessoa">
             <h2>${pessoas[i].nome}</h2>
-            <p>Idade ${pessoas[i].idade} </p>
+            <p>Idade: ${pessoas[i].idade}</p>
             <p>Disponibilidade: ${pessoas[i].disponibilidade}</p>
-            <p>Horário: ${pessoas[i].horario }</p>
-            <p>Restrições: ${pessoas[i].restricoes }</p>
-             <p>Status: ${pessoas[i].concluido === 'true' ? '✅ Concluído' : '⏳ Pendente'}</p>
-        
-            <P> ${pessoas[i].id}</p>
+            <p>Horário: ${pessoas[i].horario}</p>
+            <p>Restrições: ${pessoas[i].restricoes}</p>
+            <p><small>ID: ${pessoas[i].id}</small></p>
         </div>` 
     }
 }
+
 function pesquisar(){
     carregarDados()
     let nomeProcurado = document.getElementById('input-nome').value.trim() 
+    
+    if (!nomeProcurado) {
+        alert('Digite um nome para pesquisar!')
+        return
+    }
+
     for(let i = 0; i < pessoas.length; i++){
-        // if(nomeProcurado.toLowerCase() == pessoas[i].nome.toLowerCase()){
         if(pessoas[i].nome.toLowerCase().includes(nomeProcurado.toLowerCase())){
+            document.getElementById('input-nome').value = pessoas[i].nome
             document.getElementById('input-idade').value = pessoas[i].idade
             document.getElementById('input-disponibilidade').value = pessoas[i].disponibilidade
             document.getElementById('input-horario').value = pessoas[i].horario || ''
             document.getElementById('input-restricoes').value = pessoas[i].restricoes
-            document.getElementById('input-concluido').value = pessoas[i].concluido
             document.getElementById('input-id').value = pessoas[i].id
             break
         }
     }
 }
 
-
 function salvarPessoa(){
+    carregarDados()
     let id = Number(document.getElementById('input-id').value)
 
     if (!id) { 
@@ -91,17 +86,14 @@ function salvarPessoa(){
     }
 
     for(let i = 0; i < pessoas.length; i++){
-
         if(id == pessoas[i].id){
-
             pessoas[i].nome = document.getElementById('input-nome').value 
             pessoas[i].idade = Number(document.getElementById('input-idade').value)
             pessoas[i].disponibilidade = document.getElementById('input-disponibilidade').value 
             pessoas[i].horario = document.getElementById('input-horario').value 
             pessoas[i].restricoes = document.getElementById('input-restricoes').value 
-            pessoas[i].concluido = document.getElementById('input-concluido').value
             break 
-    }
+        }
     }
     salvarDados()
     mostrarTodas()
@@ -109,6 +101,7 @@ function salvarPessoa(){
 }
 
 function excluirPessoa(){
+    carregarDados()
     let id = Number(document.getElementById('input-id').value)
 
     if (!id) { 
@@ -118,20 +111,12 @@ function excluirPessoa(){
 
     for(let i = 0; i < pessoas.length; i++){
         if(id == pessoas[i].id){
-console.log(pessoas[i]);
-
             pessoas.splice(i, 1)
-            console.log(i);
             break 
+        }
     }
-
-}
     
     salvarDados()
     mostrarTodas()
     limparFormulario()
-
-
-
-
 }

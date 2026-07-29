@@ -31,24 +31,20 @@
             <label for="input-restricoes">Restrições</label>
             <input id="input-restricoes" type="text">
         </div>
-        <input id="input-id" type=>
 
-        <div class="container-inputs">
-    <label for="input-concluido">Já foi concluído?</label>
-    <select id="input-concluido">
-        <option value="false">Não</option>
-        <option value="true">Sim</option>
-    </select>
-</div>
+        <div class="container-inputs" id="div-id">
+            <label for="input-input-id">ID</label>
+            <input id="input-id" type="number">
+        </div>
 
-   <button onclick="cadastrarPessoa()">+</button>
-        <button onclick="salvarPessoa()">💾</button>
-        <button onclick="excluirPessoa()">🗑️</button>
-    
-    
+        
+        <div class="container-botoes-form">
+            <button onclick="cadastrarPessoa()">+</button>
+            <button onclick="salvarPessoa()">💾</button>
+            <button onclick="excluirPessoa()">🗑️</button>
+        </div>
     </div>
 
-    
     <div id="painel-botoes">
         <button onclick="mostrarTodas()">Mostrar todas as pessoas</button>
         <button onclick="pesquisar()">🔍</button>
@@ -56,7 +52,6 @@
 
     <div id="painel-pessoas"></div>
 
-   
     <script src="script.js"></script>
 </body>
 </html>
