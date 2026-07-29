@@ -18,6 +18,8 @@ function cadastrarPessoa() {
         disponibilidade: document.getElementById("input-disponibilidade").value,
         horario: document.getElementById("input-horario").value,
         restricoes: document.getElementById("input-restricoes").value
+      concluida: document.getElementById("input-concluida").value 
+
     }
     
     pessoas.push(novaPessoa)
@@ -33,6 +35,7 @@ function limparFormulario() {
     document.getElementById('input-disponibilidade').value = ''
     document.getElementById('input-horario').value = ''
     document.getElementById('input-restricoes').value = ''
+    document.getElementById('input-concluida').value = '' 
     document.getElementById('input-id').value = '' 
     document.getElementById('input-nome').focus()
 }
@@ -49,6 +52,7 @@ function mostrarTodas(){
             <p>Disponibilidade: ${pessoas[i].disponibilidade}</p>
             <p>Horário: ${pessoas[i].horario}</p>
             <p>Restrições: ${pessoas[i].restricoes}</p>
+            <p>Concluída: ${pessoas[i].concluida}</p> <!-- NOVO -->
             <p><small>ID: ${pessoas[i].id}</small></p>
         </div>` 
     }
@@ -70,6 +74,7 @@ function pesquisar(){
             document.getElementById('input-disponibilidade').value = pessoas[i].disponibilidade
             document.getElementById('input-horario').value = pessoas[i].horario || ''
             document.getElementById('input-restricoes').value = pessoas[i].restricoes
+            document.getElementById('input-concluida').value = pessoas[i].concluida || '' 
             document.getElementById('input-id').value = pessoas[i].id
             break
         }
@@ -92,6 +97,8 @@ function salvarPessoa(){
             pessoas[i].disponibilidade = document.getElementById('input-disponibilidade').value 
             pessoas[i].horario = document.getElementById('input-horario').value 
             pessoas[i].restricoes = document.getElementById('input-restricoes').value 
+           pessoas[i].concluida = document.getElementById('input-concluida').value // NOVO
+
             break 
         }
     }
