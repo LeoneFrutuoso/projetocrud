@@ -8,8 +8,9 @@
 </head>
 <body>
 
-    <h1>CRUD DE TAREFAS</h1>
+    <h1>CRUD DE TAREFAS</h1>    
 
+    <div class="conteudo">
     <div id="form">
         <div class="container-inputs">
             <label for="input-nome">Nome</label>
@@ -35,28 +36,85 @@
 <div class="container-inputs">
             <label for="input-concluida">Concluída?</label>
             <input id="input-concluida" type="checkbox">
-        </div>git 
-       
-
-
-
-
-
-   <div class="container-inputs" id="div-id">
+    </div>
+    <div class="container-inputs" id="div-id">
             <label for="input-input-id">ID</label>
             <input id="input-id" type="number">
         </div>
 
-
-
-
-        
-        <div class="container-botoes-form">
+    <div class="container-botoes-form">
             <button onclick="cadastrarPessoa()">+</button>
             <button onclick="salvarPessoa()">💾</button>
             <button onclick="excluirPessoa()">🗑️</button>
         </div>
     </div>
+
+<div id="mural">
+  <h2>TAREFAS DA SEMANA</h2>
+
+    <div class="container-inputs">
+        <label>
+    <input type="checkbox"> 🧹 Limpar a cozinha
+        </label>
+    </div>
+
+    <div class="container-inputs">
+        <label>
+            <input type="checkbox"> 🗑️ Recolher o lixo fora
+        </label>
+    </div>
+
+    <div class="container-inputs">
+        <label>
+        <input type="checkbox"> 🧹 Varrer o pátio
+        </label>
+    </div>
+
+    <div class="container-inputs">
+        <label>
+        <input type="checkbox"> 🚽 Lavar os banheiros
+        </label>
+    </div>
+
+
+
+<div class="container-inputs">
+        <label>
+        <input type="checkbox"> 🍽️ Lavar a louça
+        </label>
+    </div>
+
+
+<div class="container-inputs">
+    <label>
+<input type="checkbox">👗 Lavar roupa
+    </label>
+    </div>
+
+<div class="container-inputs">
+        <label>
+        <input type="checkbox"> 🗂️ Organizar os armario
+        </label>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+</div>
+    
+   
+</div>
 
     <div id="painel-botoes">
         <button onclick="mostrarTodas()">Mostrar todas as pessoas</button>

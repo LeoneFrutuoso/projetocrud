@@ -1,36 +1,41 @@
 :root {
-
   --color-primary: #ee2f0d;       
-  --color-primary-light: #970bb3; 
+  --color-primary-light: #1e293b; 
   --color-secondary: #e6ab98;     
 
- 
-  --color-bg-main: #e98dca;      
+  --color-bg-main: #e8d7ff;      
   --color-bg-card: #f108f1;       
   --color-text-main: #2b3a30;     
   --color-text-muted: #707b73;    
 
- 
   --color-accent: #f4a261;       
   --color-danger: #e76f51;        
-  
   
   --color-border: #e2e8f0;        
   --shadow-sm: 0 2px 4px rgba(43, 58, 48, 0.08);
   --shadow-md: 0 4px 12px rgba(43, 58, 48, 0.12);
 }
 
-body{
-    background-color: var(--color-bg-main);
+
+body {
+    background-color:#f0f4f8;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
 
-#form{
+#form, #mural {
     background-color: var(--color-primary-light);
     width: 30%;
 
@@ -42,15 +47,32 @@ body{
     
     padding: 25px;
     border-radius: 10px;
+    color: white;
 }
-.container-inputs{
+
+.container-inputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
-#div-id{
+#div-id {
     display: none;
+}
+
+
+#painel-pessoas {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; 
+}
+
+.card-pessoa {
+    background-color: var(--color-primary-light); 
+    padding: 15px;
+    border-radius: 10px; 
+    color: white;
 }

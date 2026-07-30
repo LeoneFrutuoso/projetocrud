@@ -17,7 +17,7 @@ function cadastrarPessoa() {
         idade: Number(document.getElementById("input-idade").value),
         disponibilidade: document.getElementById("input-disponibilidade").value,
         horario: document.getElementById("input-horario").value,
-        restricoes: document.getElementById("input-restricoes").value
+        restricoes: document.getElementById("input-restricoes").value,
       concluida: document.getElementById("input-concluida").value 
 
     }
@@ -97,7 +97,7 @@ function salvarPessoa(){
             pessoas[i].disponibilidade = document.getElementById('input-disponibilidade').value 
             pessoas[i].horario = document.getElementById('input-horario').value 
             pessoas[i].restricoes = document.getElementById('input-restricoes').value 
-           pessoas[i].concluida = document.getElementById('input-concluida').value // NOVO
+           pessoas[i].concluida = document.getElementById('input-concluida').value 
 
             break 
         }
