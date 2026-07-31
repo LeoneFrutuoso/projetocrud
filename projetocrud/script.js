@@ -58,6 +58,74 @@ function mostrarTodas(){
     }
 }
 
+
+
+
+function testar() {
+    carregarDados()
+
+    let testeDeLeitura = localStorage.getItem('teste')
+    console.log(testeDeLeitura)
+
+    pessoas = [
+        {
+            id: 1785372466369,
+            nome: "Raquel",
+            idade: 19,
+            disponibilidade: "seg",
+            horario: "12",
+            restricoes: "",
+            concluida: "on"
+        },
+        {
+            id: 1785460687131,
+            nome: "Paulo",
+            idade: 20,
+            disponibilidade: "Segunda",
+            horario: "12:00",
+            restricoes: "nenhuma",
+            concluida: "on"
+        },
+        {
+            id: 1785460757182,
+            nome: "Felipe",
+            idade: 21,
+            disponibilidade: "terça",
+            horario: "10:00",
+            restricoes: "nenhuma",
+            concluida: ""
+        },
+        {
+            id: 1785460806054,
+            nome: "Francisco",
+            idade: 24,
+            disponibilidade: "terça",
+            horario: "11:00",
+            restricoes: "nenhuma",
+            concluida: ""
+        },
+        {
+            id: 1785460844593,
+            nome: "Helena",
+            idade: 25,
+            disponibilidade: "sexta",
+            horario: "8:00",
+            restricoes: "nenuma",
+            concluida: ""
+        }
+    ]
+
+    console.log(pessoas)
+    salvarDados()
+    mostrarTodas()
+}
+
+
+
+
+
+
+
 function pesquisar(){
     carregarDados()
     let nomeProcurado = document.getElementById('input-nome').value.trim() 
@@ -85,10 +153,7 @@ function salvarPessoa(){
     carregarDados()
     let id = Number(document.getElementById('input-id').value)
 
-    if (!id) { 
-        alert('Pesquise uma pessoa primeiro para editar!')
-        return
-    }
+   
 
     for(let i = 0; i < pessoas.length; i++){
         if(id == pessoas[i].id){
@@ -107,14 +172,12 @@ function salvarPessoa(){
     limparFormulario()
 }
 
+
 function excluirPessoa(){
     carregarDados()
     let id = Number(document.getElementById('input-id').value)
 
-    if (!id) { 
-        alert('Pesquise uma pessoa primeiro para excluir!')
-        return
-    }
+    
 
     for(let i = 0; i < pessoas.length; i++){
         if(id == pessoas[i].id){
